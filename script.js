@@ -1,6 +1,6 @@
-var input = document.getElementById("inputtext");
-var enterButton = document.getElementById("enter");
-var ul = document.querySelector("ul");
+const input = document.getElementById("inputtext");
+const enterButton = document.getElementById("enter");
+const ul = document.querySelector("ul");
 
 function inputLength(){
 	return input.value.length;
@@ -11,10 +11,10 @@ function capitalizeFirstLetter(string){
 }
 
 function createListElement(){
-	var li = document.createElement("li");
-	var p =document.createElement("p");
-	p.appendChild(document.createTextNode(capitalizeFirstLetter(input.value) + " "));
-	var del = document.createElement("button");
+	const li = document.createElement("li");
+	const p =document.createElement("p");
+	p.appendChild(document.createTextNode(`${capitalizeFirstLetter(input.value)} `));
+	const del = document.createElement("button");
 	del.appendChild(document.createTextNode("Del"));
 	del.setAttribute("class","delButton");
 	li.appendChild(p);
