@@ -2,15 +2,15 @@ const input = document.getElementById("inputtext");
 const enterButton = document.getElementById("enter");
 const ul = document.querySelector("ul");
 
-function inputLength(){
+const inputLength = () => {
 	return input.value.length;
 }
 
-function capitalizeFirstLetter(string){
+const capitalizeFirstLetter = (string) => {
 	return input.value[0].toUpperCase() + input.value.slice(1).toLowerCase();
 }
 
-function createListElement(){
+const createListElement = () => {
 	const li = document.createElement("li");
 	const p =document.createElement("p");
 	p.appendChild(document.createTextNode(`${capitalizeFirstLetter(input.value)} `));
@@ -23,26 +23,26 @@ function createListElement(){
 	input.value = ""; //清空input
 }
 
-function addListAfterClick(){
+const addListAfterClick = () => {
 	if(inputLength()>0){
 		createListElement();
 	}
 }
 
-function addListAfterPressEnter(event){
+const addListAfterPressEnter = (event) => {
 	if(inputLength()>0 && event.keyCode === 13){
 		createListElement();
 	}
 }
 
-function toggleToDone(event){
+const toggleToDone = (event) => {
   // 判斷目標元素若是 li 則執行toggleToDone
   if( event.target.tagName.toLowerCase() === 'p' ){
     event.target.classList.toggle("done");
   }
 }
 
-function deleteItem(event){
+const deleteItem = (event) => {
 	if( event.target.className === 'delButton'){
 		event.target.parentElement.parentElement.remove();
 	}
